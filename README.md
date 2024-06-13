@@ -11,7 +11,7 @@ EncuestApp es una plataforma versátil que permite a los usuarios crear y respon
 
 # Test
 ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) 
-- https://encuestas-front-t25n.onrender.com/
+- https://encuestapp.netlify.app/
 
 # Tecnologias y librerias utilizadas
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
