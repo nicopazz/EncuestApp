@@ -1,0 +1,14 @@
+#container{
+    margin-bottom: 100px;
+}
+
+.containerText{
+    margin-top: 70px;
+}
+
+
+@media (max-width: 911px){
+    #container{
+        margin-top: 110px;
+    }
+}

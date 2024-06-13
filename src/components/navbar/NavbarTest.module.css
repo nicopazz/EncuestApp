@@ -1,0 +1,106 @@
+#container {
+    background-color: #0d6dfd80;
+    margin-bottom: 10px;
+}
+
+#containerNav {
+    padding: 0;
+    justify-content: end;
+}
+
+#button {
+    background-color: #FF9B00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+#button2 {
+    background-color: #FF9B00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+#button3 {
+    background-color: #FF9B00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+#button:hover {
+    background-color: #31D2F2;
+}
+
+#button2:hover {
+    background-color: #31D2F2;
+}
+
+#button3:hover {
+    background-color: #31D2F2;
+}
+
+#btnHamburguesa {
+    background-color: white;
+    height: 32px;
+    padding: 0;
+}
+
+ #img {
+    position: absolute;
+}
+
+ .navCollapse {
+    justify-content: center;
+}
+
+
+@media (max-width: 991px) {
+    #title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    #button {
+        font-size: 12px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #button2 {
+        font-size: 12px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #button3 {
+        font-size: 12px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width: 911px) {
+    #container {
+        padding-bottom: 5%;
+    }
+}
+
+@media (max-width: 629px) {
+    #container {
+        padding-bottom: 5%;
+    }
+}

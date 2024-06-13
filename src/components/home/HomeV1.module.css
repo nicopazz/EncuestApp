@@ -1,0 +1,59 @@
+body{
+  padding: 0;
+  background-image: url(/src/assets/fondo.webp);
+  background-size: cover ;
+  background-position: center;
+  background-attachment: fixed;
+  color: azure;
+}
+#container{
+
+  /* position: absolute; */
+  /* top: 300px;
+  left: 50px; */
+  /* margin-left: 10px; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+h1, Button{
+  margin-left: 15px;
+}
+
+p{
+  padding: 0 15px;
+}
+
+img{
+ 
+  /* position: absolute; */
+  /* top: 50px;
+  right: 50px; */
+  /* width="30"
+  height="30" */
+  width: 400px;
+  height: 500px;
+}
+
+#containerCol{
+  display: flex;
+}
+
+
+@media (max-width: 911px){
+  #containerCol{
+      display: block;
+}
+}
+
+@media (max-width: 911px){
+  #secctionImg{
+      text-align: center;
+}
+}
+
+@media (max-width: 415px){
+  img{
+      width: 300px;
+}
+}
