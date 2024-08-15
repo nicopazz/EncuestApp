@@ -22,8 +22,10 @@ import { useAuth } from "./context/AuthContext.jsx";
 import { ABMUsuarios } from "./components/abm/usuarios/ABMUsuarios.jsx";
 
 export const EncuestApp = () => {
-  const { user, isAuth, isLoading } = useAuth();
-
+  const {  isAuth, isLoading } = useAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
+  
   if (isLoading) {
     return <div className="d-flex justify-content-center mt-5">Loading...</div>;
   }
@@ -56,12 +58,12 @@ export const EncuestApp = () => {
                 <ProtectedRoute
                   isAllowed={
                     isAuth &&
-                    (user?.roles[0].nombre === "Administrador" ||
-                      user?.roles[0].nombre === "Moderador")
+                    (user?.roles === "Administrador" ||
+                      user?.roles === "Moderador")
                   }
                   redirectTo="/error"
                   allowedRoles={["Administrador", "Moderador"]}
-                  userRole={user && user?.roles[0].nombre}
+                  userRole={user && user?.roles}
                 />
               }
             >
@@ -97,12 +99,12 @@ export const EncuestApp = () => {
                 <ProtectedRoute
                   isAllowed={
                     isAuth &&
-                    (user?.roles[0].nombre === "Administrador" ||
-                      user?.roles[0].nombre === "Moderador")
+                    (user?.roles === "Administrador" ||
+                      user?.roles === "Moderador")
                   }
                   redirectTo="/error"
                   allowedRoles={["Administrador", "Moderador"]}
-                  userRole={user && user?.roles[0].nombre}
+                  userRole={user && user?.roles}
                 />
               }
             >

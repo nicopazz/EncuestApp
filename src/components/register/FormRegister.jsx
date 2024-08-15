@@ -65,10 +65,8 @@ export const FormRegister = () => {
     try {
       const response = await fetch(`${BASE_URL}/signup`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify({
           username: data.userName,

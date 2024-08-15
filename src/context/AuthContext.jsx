@@ -13,7 +13,7 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  //const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [errors, setErrors] = useState(null);
@@ -24,10 +24,8 @@ export function AuthProvider({ children }) {
     try {
       const response = await fetch(`${BASE_URL}/signin`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Credentials": true,
         },
         body: JSON.stringify(data),
       });
@@ -39,7 +37,7 @@ export function AuthProvider({ children }) {
       const userData = await response.json();
 
       setErrors(null);
-      setUser(userData);
+      localStorage.setItem("user",JSON.stringify(userData))
       setIsAuth(true);
       setIsLoading(false);
 
@@ -53,10 +51,8 @@ export function AuthProvider({ children }) {
     try {
       const response = await fetch(`${BASE_URL}/signout`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Credentials": true,
         },
       });
 
@@ -75,10 +71,8 @@ export function AuthProvider({ children }) {
     if (Cookies.get("token")) {
       fetch(`${BASE_URL}/user`, {
         method: "GET",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Credentials": true,
         },
       })
         .then((response) => response.json())
@@ -106,8 +100,6 @@ export function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        user,
-        setUser,
         isAuth,
         isLoading,
         errors,

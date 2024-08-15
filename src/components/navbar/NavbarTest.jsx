@@ -104,8 +104,10 @@ import logo from "../../assets/logo-no-fondo.png";
 import styles from "../footer/Footer.module.css";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/AuthContext";
+const user = JSON.parse(localStorage.getItem("user"));
+
 export const NavbarTest = () => {
-  const { user, isAuth, signout } = useAuth();
+  const { isAuth, signout } = useAuth();
   return (
     <Navbar expand="lg" id={container}>
       <Container>
@@ -136,7 +138,7 @@ export const NavbarTest = () => {
                 </Button>
               </>
             )}
-            {isAuth && user.roles[0].nombre == "Administrador" && (
+            {isAuth && user.roles == "Administrador" && (
               <>
                 <Button id={button3} size="sm">
                   <Navbar.Text>
@@ -159,7 +161,7 @@ export const NavbarTest = () => {
                     </Link>
                   </Navbar.Text>
                 </Button>
-            {isAuth && user.roles[0].nombre == "Administrador" && (
+            {isAuth && user.roles == "Administrador" && (
               <>
                 <Button id={button3} size="sm">
                   <Navbar.Text>
