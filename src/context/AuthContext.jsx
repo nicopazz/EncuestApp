@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
 
       if (response.ok) {
         Cookies.remove("token");
-        setUser(null);
+        //setUser(null);
         setIsAuth(false);
         localStorage.removeItem("user");
       }
@@ -68,7 +68,12 @@ export function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    if (Cookies.get("token")) {
+    const storedUser = localStorage.getItem("user");
+  
+    if (storedUser) {
+      setIsAuth(true);
+      setIsLoading(false);
+    } else if (Cookies.get("token")) {
       fetch(`${BASE_URL}/user`, {
         method: "GET",
         headers: {
@@ -81,22 +86,21 @@ export function AuthProvider({ children }) {
             setIsLoading(false);
             return;
           }
-
-          setUser(userData);
+  
+          localStorage.setItem("user", JSON.stringify(userData));
           setIsAuth(true);
           setIsLoading(false);
         })
         .catch((error) => {
           console.log(error);
           setIsAuth(false);
-          setUser(null);
           setIsLoading(false);
         });
     } else {
       setIsLoading(false);
     }
   }, []);
-
+  
   return (
     <AuthContext.Provider
       value={{

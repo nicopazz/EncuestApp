@@ -25,7 +25,9 @@ export const EncuestasProvider = ({ children }) => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const getEncuestas = async (params) => {
+
     try {
+      //const token = localStorage.getItem("authToken");
       const response = await fetch(
         `${BASE_URL}/encuestas${params ? `?${params}` : ""}`
       );

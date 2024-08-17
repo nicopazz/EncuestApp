@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useForm } from "../../hooks/useForm.js";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { alertcustom } from "../../utils/alertCustom.js";
 
 export const LoginUser = () => {
+  
   const { signin, errors, setErrors } = useAuth();
   const { email, password, handleOnChange, setFormData } = useForm({
     email: "",
@@ -40,6 +41,8 @@ export const LoginUser = () => {
         return;
       }
 
+      //localStorage.setItem("authToken", response.token);
+
       alertcustom("Inicio de sesión exitoso", "Logueado", "success", () => {
         setErrors(null);
         setFormData({ email: "", password: "" });
@@ -49,6 +52,8 @@ export const LoginUser = () => {
       console.log(error);
     }
   };
+
+ 
 
   const hasError = (path) =>
     errors && !!errors.find((err) => err.path === path);
