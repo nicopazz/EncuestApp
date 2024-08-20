@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../context/AuthContext";
+//import { useAuth } from "../../../context/AuthContext";
 import { useEncuestas } from "../../../context/EncuestaContext";
 import { ABMUsuariosCard } from "./card/ABMUsuariosCard";
 import Swal from "sweetalert2";
@@ -15,7 +15,7 @@ export const ABMUsuarios = () => {
     isLoading,
     setIsLoading,
   } = useEncuestas();
-  const { user } = useAuth();
+  //const { user } = useAuth();
   const [updateCheckbox, setUpdateCheckbox] = useState(0);
 
   useEffect(() => {
@@ -51,6 +51,10 @@ export const ABMUsuarios = () => {
     });
     setUpdateCheckbox(updateCheckbox + 1);
   };
+
+  const user = localStorage.getItem('user');
+  
+  
 
   return (
     <>

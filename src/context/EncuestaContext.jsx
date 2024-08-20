@@ -163,10 +163,8 @@ export const EncuestasProvider = ({ children }) => {
     try {
       const response = await fetch(`${BASE_URL}/encuestas`, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Credentials": true,
         },
         body: JSON.stringify(encuesta),
       });

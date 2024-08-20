@@ -15,6 +15,7 @@ export const EncuestasForm = () => {
   const [descripcion, setDescripcion] = useState("");
   const [categorias, setCategorias] = useState("");
   const [categoriasData, setCategoriasData] = useState([]);
+  
 
   const BASE_URL = import.meta.env.VITE_BASE_URL;
   const handleOnClickNewFormData = () => {
@@ -228,7 +229,7 @@ export const EncuestasForm = () => {
               className={hasError("categoria") ? "error-input" : ""}
             >
               <option>Selecciona una categoría</option>
-              {categoriasData.map((categoria) => (
+              {categoriasData && categoriasData.length > 0 && categoriasData.map((categoria) => (
                 <option key={categoria._id} value={categoria._id}>
                   {categoria.nombre}
                 </option>
@@ -250,7 +251,7 @@ export const EncuestasForm = () => {
             </Button>
           )}
 
-          {formData.map((data) => (
+          {formData && formData.map((data) => (
             <div key={data.id}>
               <Form.Group className="d-flex mb-3">
                 <Form.Control

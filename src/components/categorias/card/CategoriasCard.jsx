@@ -3,11 +3,12 @@ import { useNavigate, Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import styles from "./CategoriasCard.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
-import { useAuth } from "../../../context/AuthContext";
+//import { useAuth } from "../../../context/AuthContext";
 
 export const CategoriasCard = ({ categoria, handleOnBorrarCategoria }) => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  //const { user } = useAuth();
+  const user = localStorage.getItem('user');
 
   return (
     <Card className={`bg-dark text position-relative ${styles.card}`}>
@@ -31,7 +32,7 @@ export const CategoriasCard = ({ categoria, handleOnBorrarCategoria }) => {
                       </Card.Text> */}
         </div>
       </Link>
-      {user && user?.roles[0].nombre === "Administrador" && (
+      {user && user?.roles === "Administrador" && (
         <Card.Footer className={`${styles.adminFooter}`}>
           <div className="d-flex w-100 justify-content-evenly">
             <Button

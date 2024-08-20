@@ -64,7 +64,7 @@ export const ResponderEncuesta = () => {
         body: JSON.stringify(dataForm),
       });
 
-      // const data = await response.json();
+      //const data = await response.json();
 
       // console.log(data);
 

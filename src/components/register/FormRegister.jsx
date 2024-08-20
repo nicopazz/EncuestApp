@@ -27,7 +27,7 @@ const DEFAULT_ROL = import.meta.env.VITE_DEFAULT_ROL;
 
 export const FormRegister = () => {
   const form = useForm();
-  const { register, control, handleSubmit, formState, watch } = form;
+  const { register, /*control,*/ handleSubmit, formState, watch } = form;
   const { errors } = formState;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [passwordVisibleConfirm, setPasswordVisibleConfirm] = useState(false);
