@@ -55,17 +55,19 @@ export function AuthProvider({ children }) {
           "Content-Type": "application/json",
         },
       });
-
+  
       if (response.ok) {
         Cookies.remove("token");
-        //setUser(null);
-        setIsAuth(false);
         localStorage.removeItem("user");
+        setIsAuth(false);  // Asegúrate de que `isAuth` se actualice a `false`
       }
     } catch (error) {
       console.log(error);
     }
   };
+  
+  
+  
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
